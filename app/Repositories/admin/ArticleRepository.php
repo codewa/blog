@@ -253,6 +253,7 @@ class ArticleRepository
 //		$disk = QiniuStorage::disk('qiniu');
 		$disk = \Storage::drive('upyun');
 		$handle = $disk->read($file);
+		dd($handle);
 		$fileName = md5($file->getClientOriginalName().time().rand()).'.'.$file->getClientOriginalExtension();
 		$bool = $disk->write(config('admin.global.imagePath').$fileName,$handle);
 		if ($bool) {
