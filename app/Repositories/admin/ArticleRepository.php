@@ -254,13 +254,13 @@ class ArticleRepository
 		$disk = \Storage::drive('upyun');
 		$handle = $disk->read($file);
 		dd($handle);
-		$fileName = md5($file->getClientOriginalName().time().rand()).'.'.$file->getClientOriginalExtension();
-		$bool = $disk->write(config('admin.global.imagePath').$fileName,$handle);
-		if ($bool) {
-			$path = $disk->read(config('admin.global.imagePath').$fileName);
-			return $path;
-		}
-		return '';
+//		$fileName = md5($file->getClientOriginalName().time().rand()).'.'.$file->getClientOriginalExtension();
+//		$bool = $disk->write(config('admin.global.imagePath').$fileName,$handle);
+//		if ($bool) {
+//			$path = $disk->read(config('admin.global.imagePath').$fileName);
+//			return $path;
+//		}
+//		return '';
 	}
 	/**
 	 * markdown 图片上传
