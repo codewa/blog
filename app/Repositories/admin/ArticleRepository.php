@@ -4,7 +4,7 @@ use App\Models\Article;
 use App\Models\Tag;
 use Carbon\Carbon;
 use Flash;
-use zgldh\QiniuStorage\QiniuStorage;
+//use zgldh\QiniuStorage\QiniuStorage;
 use Redis;
 use Cache;
 use Storage;
