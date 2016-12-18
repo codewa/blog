@@ -171,7 +171,8 @@ class ArticleRepository
 			if ($request->hasFile('img')) {
 				//判断之前是否有封面,有则删掉之前的封面
 				if ($article->img) {
-					$disk = QiniuStorage::disk('qiniu');
+//					$disk = QiniuStorage::disk('qiniu');
+					$disk = \Storage::drive('upyun');
 					$disk->delete(substr($article->img, strpos($article->img,config('admin.global.imagePath')))); 
 				}
 				$data['img'] = $this->uploadImage($request->file('img'));
@@ -249,9 +250,10 @@ class ArticleRepository
 	 */
 	private function uploadImage($file)
 	{
-		$disk = QiniuStorage::disk('qiniu');
+//		$disk = QiniuStorage::disk('qiniu');
+		$disk = \Storage::drive('upyun');
 		$fileName = md5($file->getClientOriginalName().time().rand()).'.'.$file->getClientOriginalExtension();
-		$bool = $disk->put(config('admin.global.imagePath').$fileName,file_get_contents($file->getRealPath()));
+		$bool = $disk->write(config('admin.global.imagePath').$fileName,file_get_contents($file->getRealPath()));
 		if ($bool) {
 			$path = $disk->downloadUrl(config('admin.global.imagePath').$fileName);
 			return $path;
