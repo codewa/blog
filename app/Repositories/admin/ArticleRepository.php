@@ -278,6 +278,7 @@ class ArticleRepository
 	{
 		if ($request->hasFile('editormd-image-file')) {
 			$path = $this->uploadImage($request->file('editormd-image-file'));
+			dd($path);
 			return ['success'=> 1,'message' => trans('alerts.articles.upload_success'),'url' => $path];
 		}
 		return ['success'=> 0,'message' => trans('alerts.articles.upload_error')];
