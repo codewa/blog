@@ -4,6 +4,7 @@ use App\Models\Article;
 use App\Models\Tag;
 use Carbon\Carbon;
 use Flash;
+use zgldh\QiniuStorage\QiniuStorage;
 use Redis;
 use Cache;
 use Storage;
@@ -248,9 +249,7 @@ class ArticleRepository
 	 */
 	private function uploadImage($file)
 	{
-		$drive = \Storage::drive('upyun');
-		dd($drive);
-		$disk = Storage::disk('qiniu');
+		$disk = QiniuStorage::disk('qiniu');
 		$fileName = md5($file->getClientOriginalName().time().rand()).'.'.$file->getClientOriginalExtension();
 		$bool = $disk->put(config('admin.global.imagePath').$fileName,file_get_contents($file->getRealPath()));
 		if ($bool) {
