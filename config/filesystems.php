@@ -72,7 +72,7 @@ return [
 
         'upyun' => [
             'driver'        => 'upyun',
-            'domain'        => 'https://baby611.b0.upaiyun.com',//你的upyun域名
+            'domain'        => 'baby611.b0.upaiyun.com',//你的upyun域名
             'username'      => 'xiaohai8',//UserName
             'password'      => 'xiaohai123',//Password
             'bucket'        => 'baby611',//Bucket名字
