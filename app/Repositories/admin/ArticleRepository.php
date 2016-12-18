@@ -255,7 +255,7 @@ class ArticleRepository
 		$fileName = md5($file->getClientOriginalName().time().rand()).'.'.$file->getClientOriginalExtension();
 		$bool = $disk->write(config('admin.global.imagePath').$fileName,file_get_contents($file->getRealPath()));
 		if ($bool) {
-			$path = config('admin.global.imagePath').$fileName;
+			$path = $disk->read(config('admin.global.imagePath').$fileName);
 			return $path;
 		}
 		return '';
@@ -278,7 +278,6 @@ class ArticleRepository
 	{
 		if ($request->hasFile('editormd-image-file')) {
 			$path = $this->uploadImage($request->file('editormd-image-file'));
-			dd($path);
 			return ['success'=> 1,'message' => trans('alerts.articles.upload_success'),'url' => $path];
 		}
 		return ['success'=> 0,'message' => trans('alerts.articles.upload_error')];
