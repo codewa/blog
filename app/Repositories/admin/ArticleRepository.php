@@ -254,12 +254,11 @@ class ArticleRepository
 		$disk = \Storage::drive('upyun');
 		$fileName = md5($file->getClientOriginalName().time().rand()).'.'.$file->getClientOriginalExtension();
 		$bool = $disk->write(config('admin.global.imagePath').$fileName,file_get_contents($file->getRealPath()));
-		return $bool;
-		if ($bool) {
-			$path = $disk->get(config('admin.global.imagePath').$fileName);
-			return $path;
-		}
-		return '';
+//		if ($bool) {
+//			$path = $disk->get(config('admin.global.imagePath').$fileName);
+//			return $path;
+//		}
+		return '11111';
 	}
 	/**
 	 * markdown 图片上传
@@ -279,7 +278,6 @@ class ArticleRepository
 	{
 		if ($request->hasFile('editormd-image-file')) {
 			$path = $this->uploadImage($request->file('editormd-image-file'));
-			dd($path);
 			return ['success'=> 1,'message' => trans('alerts.articles.upload_success'),'url' => $path];
 		}
 		return ['success'=> 0,'message' => trans('alerts.articles.upload_error')];
