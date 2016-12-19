@@ -258,7 +258,7 @@ class ArticleRepository
 //			$path = $disk->get(config('admin.global.imagePath').$fileName);
 //			return $path;
 //		}
-		return '11111';
+		return $bool;
 	}
 	/**
 	 * markdown 图片上传
