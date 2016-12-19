@@ -254,11 +254,11 @@ class ArticleRepository
 		$disk = \Storage::drive('upyun');
 		$fileName = md5($file->getClientOriginalName().time().rand()).'.'.$file->getClientOriginalExtension();
 		$bool = $disk->write(config('admin.global.imagePath').$fileName,file_get_contents($file->getRealPath()));
-//		if ($bool) {
-//			$path = $disk->get(config('admin.global.imagePath').$fileName);
-//			return $path;
-//		}
-		return $bool;
+		if ($bool) {
+			$path = config('admin.global.imagePath').$fileName;
+			return $path;
+		}
+		return '';
 	}
 	/**
 	 * markdown 图片上传
