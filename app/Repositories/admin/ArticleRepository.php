@@ -255,7 +255,7 @@ class ArticleRepository
 		$fileName = md5($file->getClientOriginalName().time().rand()).'.'.$file->getClientOriginalExtension();
 		$bool = $disk->write(config('admin.global.imagePath').$fileName,file_get_contents($file->getRealPath()));
 		if ($bool) {
-			$path = config('admin.global.imagePath').$fileName;
+			$path = "https://baby611.b0.upaiyun.com/".config('admin.global.imagePath').$fileName;
 			return $path;
 		}
 		return '';
