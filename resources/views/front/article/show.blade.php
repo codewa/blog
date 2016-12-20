@@ -9,7 +9,6 @@
 <section class="breadcrumbs-v5 bg-position-fixed breadcrumbs-v5-bg-img-v4">
     <div class="container">
         <h2 class="breadcrumbs-v5-title">I am 小海君</h2>
-        <span class="breadcrumbs-v5-subtitle">I am a slow walker, but I never walk backwards...</span>
     </div>
 </section>
 <section class="breadcrumbs-v1">
