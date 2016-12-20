@@ -38,23 +38,23 @@
     <div class="divider-v1"><div class="divider-v1-element"><i class="divider-v1-icon fa fa-skyatlas"></i></div></div>
 
     <!-- Blog Comment -->
-    <div class="bg-color-white margin-b-30">
-        <div class="blog-single-post-content">
-            <div class="heading-v1 text-center margin-b-50">
-                <h2 class="heading-v1-title">Leave a comment</h2>
-            </div>
-            <div id="SOHUCS" sid="{{$article->id}}" ></div>
-            <div id="cyQing" role="cylabs" data-use="qing"></div>
-            <script type="text/javascript">
-                (function(){
-                    var appid = 'cysKVceXe';
-                    var conf = 'prod_eb8d5ea26d786d662430676c16737435';
-                    var width = window.innerWidth || document.documentElement.clientWidth;
-                    if (width < 960) {
-                        window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })();
-            </script>
-        </div>
-    </div>
+    {{--<div class="bg-color-white margin-b-30">--}}
+        {{--<div class="blog-single-post-content">--}}
+            {{--<div class="heading-v1 text-center margin-b-50">--}}
+                {{--<h2 class="heading-v1-title">Leave a comment</h2>--}}
+            {{--</div>--}}
+            {{--<div id="SOHUCS" sid="{{$article->id}}" ></div>--}}
+            {{--<div id="cyQing" role="cylabs" data-use="qing"></div>--}}
+            {{--<script type="text/javascript">--}}
+                {{--(function(){--}}
+                    {{--var appid = 'cysKVceXe';--}}
+                    {{--var conf = 'prod_eb8d5ea26d786d662430676c16737435';--}}
+                    {{--var width = window.innerWidth || document.documentElement.clientWidth;--}}
+                    {{--if (width < 960) {--}}
+                        {{--window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })();--}}
+            {{--</script>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 </article>
 @endsection
 @section('rightSide')
