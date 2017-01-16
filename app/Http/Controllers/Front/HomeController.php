@@ -9,8 +9,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-    	// Redis::executeRaw(['SET', 'foo2', '5']);
-    	// dd(Redis::executeRaw(['SET', 'foo1', '32']));
+
+    	 Redis::executeRaw(['SET', 'foo2', '5']);
+    	 dd(Redis::executeRaw(['SET', 'foo1', '32']));
     	// dd(Redis::lpush('id',[1,2,3,4]));
     	// $str = ['tank','zhang','ying','li'];
     	// $source = ['89','40','60','100'];
