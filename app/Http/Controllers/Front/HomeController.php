@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
     	$articles = FrontRepository::getArticles();
     	$cate = FrontRepository::getAllCategory();
-		$offset = 86400; //1天
+		$offset = 10; //1天
 		$expire = gmdate("D, d M Y H:i:s", time() + $offset) . " GMT";
 		header('Cache-Control', 'public');
 		header('Content-Type', 'text/html; charset=utf-8');
