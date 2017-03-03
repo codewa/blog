@@ -11,8 +11,9 @@ class HomeController extends Controller
     {
     	$articles = FrontRepository::getArticles();
     	$cate = FrontRepository::getAllCategory();
-
-    	return view('front.home.index')->with(compact(['articles','cate']));
+		$offset = 86400; //1天
+		$expire = gmdate("D, d M Y H:i:s", time() + $offset) . " GMT";
+		return response()->view('haopinjia.www.index');
 
     }
 }
