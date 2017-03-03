@@ -33,7 +33,7 @@ class HomeController extends Controller
 		$offset = 86400; //1天
 		$expire = gmdate("D, d M Y H:i:s", time() + $offset) . " GMT";
 		header('Cache-Control', 'public');
-		header('Content-Type', 'text/html; charset=utf-8')
+		header('Content-Type', 'text/html; charset=utf-8');
 		header('Expires',$expire);
     	return view('front.home.index')->with(compact(['articles','cate']));
 
