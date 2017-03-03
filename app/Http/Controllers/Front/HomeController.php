@@ -11,12 +11,12 @@ class HomeController extends Controller
     {
     	$articles = FrontRepository::getArticles();
     	$cate = FrontRepository::getAllCategory();
-		$offset = 86400; //1天
-		$expire = gmdate("D, d M Y H:i:s", time() + $offset) . " GMT";
+		header("content-type:text/html; charset=utf-8");
+		$offset = 86400 * 3;
+		$expire = "Expires: " . gmdate("D, d M Y H:i:s", time() + $offset) . " GMT";
+		header($expire);
 
-	  	return view('front.home.index')->with(compact(['articles','cate']))->header('Cache-Control', 'public')
-		->header('Content-Type', 'text/html; charset=utf-8')
-			->header('Expires',$expire);
+	  	return view('front.home.index')->with(compact(['articles','cate']));
 
     }
 }
