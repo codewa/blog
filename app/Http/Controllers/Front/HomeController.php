@@ -10,7 +10,6 @@ class HomeController extends Controller
     {
     	$articles = FrontRepository::getArticles();
     	$cate = FrontRepository::getAllCategory();
-		dd($articles);
     	return view('front.home.index')->with(compact(['articles','cate']));
 
     }
