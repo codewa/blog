@@ -10,10 +10,14 @@ class HomeController extends Controller
     {
     	$articles = FrontRepository::getArticles();
     	$cate = FrontRepository::getAllCategory();
+		header("content-type:text/html; charset=utf-8");
+		$offset = 86400 * 3;
+		$expire = "Expires: " . gmdate("D, d M Y H:i:s", time() + $offset) . " GMT";
+		header($expire);
 		$returnData['articles'] = $articles;
 		$returnData['cate']     = $cate;
 
 //		return view('front.home.index')->with(compact(['articles','cate']));
-		return response()->view('front.home.index',$returnData)->header("content-type:text/html; charset=utf-8");
+		return response()->view('front.home.index',$returnData);
     }
 }
