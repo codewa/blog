@@ -14,8 +14,10 @@ class HomeController extends Controller
 		$offset = 86400 * 3;
 		$expire = "Expires: " . gmdate("D, d M Y H:i:s", time() + $offset) . " GMT";
 		header($expire);
-		header('Cache-Control: no-cache, no-store, max-age=0, must-revalidate');
-		return view('front.home.index')->with(compact(['articles','cate']));
+		$returnData['articles'] = $articles;
+		$returnData['cate']     = $cate;
 
+//		return view('front.home.index')->with(compact(['articles','cate']));
+		return response()->view('front.home.index',$returnData);
     }
 }
